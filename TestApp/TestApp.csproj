@@ -1,0 +1,154 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="FakeByRawString\**" />
+      <Compile Remove="UVFailed\**" />
+      <EmbeddedResource Remove="FakeByRawString\**" />
+      <EmbeddedResource Remove="UVFailed\**" />
+      <None Remove="FakeByRawString\**" />
+      <None Remove="UVFailed\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IDScanNet.Validation.SDK" Version="2.2111.16.1" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        
+        <None Update="BNWAntiSpoofing\Normal.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="DLBack\NormalBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="DLFront\Normal.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face2\1Face.png">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face2\2Face.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face2\Face.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face2\Face3.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face2\Ir.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face2\IrBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face2\Normal.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face2\NormalBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face2\Pdf417RawData.txt">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face2\Uv.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face2\UvBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face\Face.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face\Normal.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Face\NormalBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="PassportFront\Normal.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Valid\Ir.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Valid\IrBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="ScanImages\IR_Back.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="ScanImages\IR_Front.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Suspicious\Normal.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Suspicious\NormalBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Valid\Pdf417RawData.txt">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="ScanImages\Scan_Back.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="ScanImages\Scan_Front.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Suspicious\Uv.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Suspicious\UvBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="ScanImages\UV_Back.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="ScanImages\UV_Front.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="Face\" />
+      <Folder Include="Face2\" />
+    </ItemGroup>
+
+<!--    <Target Name="CopyDeps" BeforeTargets="Build">-->
+<!--        <ItemGroup>-->
+<!--            <Data Include="$(ProjectDir)..\CompiledDistributive\**\*.*" />-->
+<!--        </ItemGroup>-->
+
+<!--        <Copy SourceFiles="@(Data)" DestinationFiles="@(Data->'$(OutDir)\Validation\%(RecursiveDir)%(Filename)%(Extension)')">-->
+<!--            <Output TaskParameter="CopiedFiles" ItemName="SuccessfullyCopiedFiles" />-->
+<!--        </Copy>-->
+
+<!--    </Target>-->
+
+</Project>
