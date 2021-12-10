@@ -38,7 +38,9 @@ namespace TestApp
             await Validate("PassportFront");
             //Validate spoofing fake
             await Validate("BNWAntiSpoofing");
-            
+            //Validate Rfid
+            await Validate("Rfid");
+
 
             Console.ReadLine();
         }

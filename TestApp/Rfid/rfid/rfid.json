@@ -1,0 +1,26 @@
+{   
+  "RfidRawData": "",
+  "CodelineValidationResult": "CDR_Valid",  
+  "Sex": "Female",
+  "DocNumber": "VDC000387",
+  "Nationality": "UTO",
+  "IssuingState": "UTO",
+  "ExpiryDate": "31-2-23",
+  "DateOfBirth": "91-8-18",
+  "Forenames": "MARION",
+  "SecondName": "",
+  "Forename": "MARION",
+  "Surname": "MUSTER",
+  "DocType": "PASSPORT",
+  "DocId": "PASSPORT",
+  "Properties": {
+    "CD_SCDG1_VALIDATE": "RFID_VC_VALID",
+    "CD_SCSIGNATURE_VALIDATE": "RFID_VC_VALID",
+    "CD_SCSIGNEDATTRS_VALIDATE": "RFID_VC_VALID",
+    "CD_SCDG2_VALIDATE": "RFID_VC_VALID",
+    "CD_ACTIVE_AUTHENTICATION": "TS_NOT_PERFORMED",
+    "CD_SAC_STATUS": "TS_NOT_PERFORMED",
+    "CD_SCCHIPID": "0832219B",
+    "CD_SCBAC_STATUS": "TS_SUCCESS"
+  }
+ }

@@ -92,6 +92,18 @@
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         
+        <None Update="Rfid\Normal.png">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Rfid\rfid\Face.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Rfid\rfid\rfid.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
         <None Update="Valid\Ir.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
