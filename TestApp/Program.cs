@@ -170,7 +170,7 @@ namespace TestApp
                         foreach (var match in testResult.CrossMatches)
                         {
                             Console.WriteLine(
-                                $"          {match.FieldName} - {match.Item1.DataSource} = {match.Item1.Value};  {match.Item2.DataSource} = {match.Item2.Value} Confidence = {testResult.Confidence}");
+                                $"          {match.FieldName} - {match.Item1.DataSource} = {match.Item1.Value};  {match.Item2.DataSource} = {match.Item2.Value} Confidence = {match.Confidence}");
                         }
                 }
                 Console.WriteLine();
