@@ -22,25 +22,32 @@ namespace TestApp
             Stopwatch sw = Stopwatch.StartNew();
             //Init ValidationService
             Console.WriteLine("Init started");
-            await Init();
-            sw.Stop();
-            Console.WriteLine("Init time " + sw.ElapsedMilliseconds);
 
-            //Validate suspicious document
-            await Validate("Suspicious");
-            //Validate face
-            await Validate("Face");
-            //Validate DL front
-            await Validate("DLFront");
-            //Validate DL back
-            await Validate("DLBack");
-            //Validate passport front
-            await Validate("PassportFront");
-            //Validate spoofing fake
-            await Validate("BNWAntiSpoofing");
-            //Validate Rfid
-            await Validate("Rfid");
+            try
+            {
+                await Init();
+                sw.Stop();
+                Console.WriteLine("Init time " + sw.ElapsedMilliseconds);
 
+                //Validate suspicious document
+                await Validate("Suspicious");
+                //Validate face
+                await Validate("Face");
+                //Validate DL front
+                await Validate("DLFront");
+                //Validate DL back
+                await Validate("DLBack");
+                //Validate passport front
+                await Validate("PassportFront");
+                //Validate spoofing fake
+                await Validate("BNWAntiSpoofing");
+                //Validate Rfid
+                await Validate("Rfid");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
 
             Console.ReadLine();
         }
