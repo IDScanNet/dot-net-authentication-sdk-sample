@@ -16,7 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
-		<PackageReference Include="IDScanNet.Validation.SDK" Version="2.2112.14.1" />
+		<PackageReference Include="IDScanNet.Validation.SDK" Version="2.2202.4.1" />
     </ItemGroup>
     
     <ItemGroup>
