@@ -1,22 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
-		<Version>2.2112.14.1</Version>
+		<TargetFrameworks>netcoreapp3.1;net60</TargetFrameworks>
+		<Version>2.2202.4.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="FakeByRawString\**" />
-      <Compile Remove="UVFailed\**" />
-      <EmbeddedResource Remove="FakeByRawString\**" />
-      <EmbeddedResource Remove="UVFailed\**" />
-      <None Remove="FakeByRawString\**" />
-      <None Remove="UVFailed\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-		<PackageReference Include="IDScanNet.Validation.SDK" Version="2.2202.4.1" />
+      <PackageReference Include="IDScanNet.Authentication.SDK" Version="3.2210.28.2" />
+      <PackageReference Include="IDScanNet.Authentication.Shared" Version="3.2210.28.1" />
     </ItemGroup>
     
     <ItemGroup>
@@ -89,6 +81,50 @@
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         
+        <None Update="FakeByRawString\Ir.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="FakeByRawString\IrBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="FakeByRawString\Normal.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="FakeByRawString\NormalBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="FakeByRawString\Pdf417RawData.txt">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="FakeByRawString\Uv.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="FakeByRawString\UvBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="NoCroped\Normal.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="NoCroped\NormalBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="NoCropped\Normal.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="NoCropped\NormalBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
         <None Update="PassportFront\Normal.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
@@ -119,10 +155,10 @@
         <None Update="ScanImages\IR_Front.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="Suspicious\Normal.jpg">
+        <None Update="Valid\Normal.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="Suspicious\NormalBack.jpg">
+        <None Update="Valid\NormalBack.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="Valid\Pdf417RawData.txt">
@@ -134,10 +170,10 @@
         <None Update="ScanImages\Scan_Front.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="Suspicious\Uv.jpg">
+        <None Update="Valid\Uv.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="Suspicious\UvBack.jpg">
+        <None Update="Valid\UvBack.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="ScanImages\UV_Back.png">
@@ -146,11 +182,34 @@
         <None Update="ScanImages\UV_Front.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
+        <None Update="UVFailed\Ir.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="UVFailed\IrBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="UVFailed\Normal.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="UVFailed\NormalBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="UVFailed\Pdf417RawData.txt">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="UVFailed\Uv.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="UVFailed\UvBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
     
     <ItemGroup>
+      <Folder Include="FakeByRawString\" />
       <Folder Include="Face\" />
       <Folder Include="Face2\" />
+      <Folder Include="UVFailed\" />
     </ItemGroup>
 
 <!--    <Target Name="CopyDeps" BeforeTargets="Build">-->
@@ -158,7 +217,7 @@
 <!--            <Data Include="$(ProjectDir)..\CompiledDistributive\**\*.*" />-->
 <!--        </ItemGroup>-->
 
-<!--        <Copy SourceFiles="@(Data)" DestinationFiles="@(Data->'$(OutDir)\Validation\%(RecursiveDir)%(Filename)%(Extension)')">-->
+<!--        <Copy SourceFiles="@(Data)" DestinationFiles="@(Data->'$(OutDir)\Authentication\%(RecursiveDir)%(Filename)%(Extension)')">-->
 <!--            <Output TaskParameter="CopiedFiles" ItemName="SuccessfullyCopiedFiles" />-->
 <!--        </Copy>-->
 
