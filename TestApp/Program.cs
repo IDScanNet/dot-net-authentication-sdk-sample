@@ -27,29 +27,28 @@ namespace TestApp
                 await Init();
                 sw.Stop();
                 Console.WriteLine("Init time " + sw.ElapsedMilliseconds);
-                //   Validate NoCroped document
-                await Validate("NoCropped", true);
-                //Validate valid document
-                await Validate("Valid");
-                //Validate fake by UV
-                await Validate("UVFailed");
-                //Validate fake RawString
-                await Validate("FakeByRawString");
-                //Validate face
-                await Validate("Face");
-                //Validate DL front
-                await Validate("DLFront");
-                //Validate DL back
-                await Validate("DLBack");
-                //Validate passport front
-                await Validate("PassportFront");
-                //Validate spoofing fake
-                await Validate("BNWAntiSpoofing");
-                //Validate Rfid
-                await Validate("Rfid");
-
-                //Validate by UV
-                await Validate("UVFailed",false, AuthenticationTestType.UVMark);
+                //Authenticate NoCroped document
+                await Authenticate("NoCropped", true);
+                //Authenticate valid document
+                await Authenticate("Valid");
+                //Authenticate fake by UV
+                await Authenticate("UVFailed");
+                //Authenticate fake RawString
+                await Authenticate("FakeByRawString");
+                //Authenticate face
+                await Authenticate("Face");
+                //Authenticate DL front
+                await Authenticate("DLFront");
+                //Authenticate DL back
+                await Authenticate("DLBack");
+                //Authenticate passport front
+                await Authenticate("PassportFront");
+                //Authenticate spoofing fake
+                await Authenticate("BNWAntiSpoofing");
+                //Authenticate RFID
+                await Authenticate("Rfid");
+                //Authenticate by UV
+                await Authenticate("UVFailed",false, AuthenticationTestType.UVMark);
             }
             catch (Exception e)
             {
@@ -77,7 +76,7 @@ namespace TestApp
                 //Advanced Authentication settings:
                 //Host - pipe name for connection. If it's not stated, then the default one will be used
                 //Port - ignore this for now, as it would be required sometime in the future
-               // HostDirectoryPath = @"c:\Projects\IDScanNet.Authentication.SDK.Host\IDScanNet.Authentication.SDK.Host\bin\Debug\net5.0-windows7\"
+                //HostDirectoryPath = @"c:\Projects\IDScanNet.Authentication.SDK.Host\IDScanNet.Authentication.SDK.Host\bin\Debug\net5.0-windows7\"
                 //HostDataDirectoryPath - folder with data-files; can be substituted with a different value in case it's part of an app and data-files are somewhere close
             };
 
@@ -98,7 +97,7 @@ namespace TestApp
             await _AuthenticationService.InitializeAsync();
         }
 
-        private static async Task Validate(String folder, Boolean isCropRequired = false, AuthenticationTestType? testType = null)
+        private static async Task Authenticate(String folder, Boolean isCropRequired = false, AuthenticationTestType? testType = null)
         {
             Console.WriteLine("----------------------------------------------------------------------------------------");
             Console.WriteLine($"Authenticate {folder}:");
@@ -174,7 +173,7 @@ namespace TestApp
                 }
             }
 
-            //Asynchronously validate document
+            //Asynchronously authenticate document
             AuthenticationResponse result = await _AuthenticationService.ProcessAsync(request);
 
             Console.WriteLine();
