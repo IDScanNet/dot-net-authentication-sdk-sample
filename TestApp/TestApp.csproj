@@ -8,7 +8,7 @@
 
     <ItemGroup>
       <PackageReference Include="IDScanNet.Authentication.SDK" Version="3.2210.28.2" />
-      <PackageReference Include="IDScanNet.Authentication.Shared" Version="3.2210.28.1" />
+      <PackageReference Include="IDScanNet.Authentication.Shared" Version="3.2211.22.1" />
     </ItemGroup>
     
     <ItemGroup>

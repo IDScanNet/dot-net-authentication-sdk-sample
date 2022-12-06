@@ -29,8 +29,6 @@ namespace TestApp
                 Console.WriteLine("Init time " + sw.ElapsedMilliseconds);
                 //Authenticate NoCroped document
                 await Authenticate("NoCropped", true);
-                //Authenticate valid document
-                await Authenticate("Valid");
                 //Authenticate fake by UV
                 await Authenticate("UVFailed");
                 //Authenticate fake RawString
