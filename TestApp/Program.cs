@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -29,10 +29,14 @@ namespace TestApp
                 Console.WriteLine("Init time " + sw.ElapsedMilliseconds);
                 //Authenticate NoCroped document
                 await Authenticate("NoCropped", true);
+                //Authenticate valid document
+                await Authenticate("Valid");
                 //Authenticate fake by UV
                 await Authenticate("UVFailed");
                 //Authenticate fake RawString
                 await Authenticate("FakeByRawString");
+                //Validate suspicious document
+                await Authenticate("Suspicious");
                 //Authenticate face
                 await Authenticate("Face");
                 //Authenticate DL front
@@ -46,7 +50,7 @@ namespace TestApp
                 //Authenticate RFID
                 await Authenticate("Rfid");
                 //Authenticate by UV
-                await Authenticate("UVFailed",false, AuthenticationTestType.UVMark);
+                await Authenticate("UVFailed", false, AuthenticationTestType.UVMark);
             }
             catch (Exception e)
             {
@@ -134,8 +138,8 @@ namespace TestApp
 
             file = Directory.GetFiles(documentPath, "UV.*").FirstOrDefault();
             if (file != null)
-                 request.Scan.ScannedImages.Add(ImageType.UVFront, await File.ReadAllBytesAsync(file));
-            
+                request.Scan.ScannedImages.Add(ImageType.UVFront, await File.ReadAllBytesAsync(file));
+
             file = Directory.GetFiles(documentPath, "UVBack.*").FirstOrDefault();
             if (file != null)
                 request.Scan.ScannedImages.Add(ImageType.UVBack, await File.ReadAllBytesAsync(file));
@@ -155,7 +159,7 @@ namespace TestApp
             string rFidPath = Path.Combine(documentPath, "rfid");
             if (Directory.Exists(rFidPath))
             {
-                RfidData rfid; 
+                RfidData rfid;
                 string rFidjson = Path.Combine(documentPath, "rfid", "rfid.json");
                 if (File.Exists(rFidjson))
                 {
@@ -175,13 +179,13 @@ namespace TestApp
             AuthenticationResponse result = await _AuthenticationService.ProcessAsync(request);
 
             Console.WriteLine();
-          
+
             if (result.Result != null)
             {
                 sw.Stop();
                 Console.WriteLine($"Authentication Result for {folder} ElapsedMilliseconds: {sw.ElapsedMilliseconds}:");
                 String group = "";
-                foreach (var testResult in result.Result.Results.OrderBy(x=>x.TestGroup))
+                foreach (var testResult in result.Result.Results.OrderBy(x => x.TestGroup))
                 {
                     if (group != testResult.TestGroup.ToString())
                     {
@@ -216,10 +220,10 @@ namespace TestApp
                     File.WriteAllBytes($"{folder}\\Processed_{image.Key}.jpg", image.Value);
                 }
             }
-           
+
             Console.WriteLine();
         }
-       
+
 
     }
 }

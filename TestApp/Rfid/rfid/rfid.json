@@ -1,6 +1,6 @@
 {   
   "RfidRawData": "",
-  "CodelineValidationResult": "CDR_Valid",  
+  "CodelineAuthenticationResult": "CDR_Valid",  
   "Sex": "Female",
   "DocNumber": "VDC000387",
   "Nationality": "UTO",

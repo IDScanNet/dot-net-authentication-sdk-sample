@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -8,7 +8,7 @@
 
     <ItemGroup>
       <PackageReference Include="IDScanNet.Authentication.SDK" Version="3.2210.28.2" />
-      <PackageReference Include="IDScanNet.Authentication.Shared" Version="3.2211.22.1" />
+      <PackageReference Include="IDScanNet.Authentication.Shared" Version="3.2210.28.1" />
     </ItemGroup>
     
     <ItemGroup>
@@ -129,7 +129,7 @@
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         
-        <None Update="Rfid\Normal.png">
+        <None Update="Rfid\Normal.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         
@@ -141,19 +141,28 @@
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         
+        <None Update="Suspicious\Normal.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Suspicious\NormalBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Suspicious\Uv.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        <None Update="Suspicious\UvBack.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
         <None Update="Valid\Ir.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         
         <None Update="Valid\IrBack.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-        
-        <None Update="ScanImages\IR_Back.png">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-        <None Update="ScanImages\IR_Front.png">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="Valid\Normal.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -164,23 +173,11 @@
         <None Update="Valid\Pdf417RawData.txt">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="ScanImages\Scan_Back.png">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-        <None Update="ScanImages\Scan_Front.png">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
         <None Update="Valid\Uv.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="Valid\UvBack.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-        <None Update="ScanImages\UV_Back.png">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-        <None Update="ScanImages\UV_Front.png">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="UVFailed\Ir.jpg">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
